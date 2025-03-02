@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="flex items-center justify-center bg-gray-100">
+    <!-- Main Container -->
+     <div class="h-screen w-screen max-w-md bg-white pt-7 px-7 font-robotoMono">
+        <!-- Heading and para -->
+         <div class="flex justify-center items-center gap-1">
+            <h1 class="text-lg font-medium text-center leading-4 tracking-wider text-slate-800">Temperature <br> Converter</h1>
+            <i class="fa-solid fa-temperature-low text-3xl text-slate-800"></i>
+         </div>
+          <p class="mt-8 leading-8 text-3xl text-red">Enter temperature and unit you would like to convert.</p>
+
+          <!-- Input Fields -->
+           <div class="mt-7">
+                <!-- Temperature -->
+                 <div class="mb-7">
+                    <h1 class="text-slate-800 font-medium tracking-tight mb-0.5">Temperature</h1>
+                    <input id="temperature" type="number" class="w-full h-14 p-2 border-b-2 border-slate-800 focus:outline-none font-medium tracking-tight text-3xl font-azeret">
+                    <p id="temp-warning" class="text-[13px] hidden tracking-tight mt-0.5 text-red font-medium">This field can't be empty!</p>
+                 </div>
+                 <!-- From this unit -->
+                  <div class="mb-4">
+                    <div class="flex items-center gap-1">
+                        <h1 class="text-slate-800 font-medium tracking-tight mb-0.5">From this unit</h1>
+                        <i class="ri-arrow-right-line text-lg text-slate-800 "></i>
+                    </div>
+                    <select id="from-unit" class="w-full h-14 p-2 border-b-2 border-slate-800 focus:outline-none text-3xl tracking-wider appearance-none font-azeret font-medium" >
+                        <option selected hidden></option>
+                        <option>Celsius</option>
+                        <option>Fahrenheit</option>
+                        <option>Kelvin</option>
+                    </select>
+                    <p id="from-unit-warning" class="text-[13px] hidden tracking-tight mt-0.5 text-red font-medium">This field can't be empty!</p>
+                  </div>
+                  <!-- Arrow -->
+                   <div id="swap-unit-btn" class="mb-3 flex justify-center cursor-pointer">
+                    <i class="ri-arrow-up-down-line text-2xl text-slate-800 hover:text-red"></i>
+                   </div>
+                  <!-- To this unit -->
+                  <div class="mb-5">
+                    <div class="flex items-center gap-1">
+                        <h1 class="text-slate-800 font-medium tracking-tight mb-0.5">To this unit</h1>
+                        <i class="ri-arrow-right-line text-lg text-slate-800 "></i>
+                    </div>
+                    <select id="to-unit" class="w-full h-14 p-2 border-b-2 border-slate-800 focus:outline-none text-3xl tracking-wider appearance-none font-azeret font-medium" >
+                        <option selected hidden></option>
+                        <option>Celsius</option>
+                        <option>Fahrenheit</option>
+                        <option>Kelvin</option>
+                    </select>
+                    <p id="to-unit-warning" class="text-[13px] hidden tracking-tight mt-0.5 text-red font-medium">This field can't be empty!</p>
+                  </div>
+                  <!-- Result div -->
+                   <div class="w-full min-h-40 bg-red mb-3 rounded-lg pl-3 py-4">
+                        <div class="flex items-center mb-2 pl-2">
+                            <h1 class="text-sm font-azeret opacity-90 font-medium tracking-widest text-slate-50 ">Result</h1>
+                            <i class="ri-corner-right-down-line text-slate-50 text-sm mt-2 opacity-90"></i>
+                        </div>
+                        <h1 id="res-temp" class="font-bold font-azeret text-4xl text-slate-50 tracking-tighter pl-1 pt-1 opacity-65 break-words mr-3">Waiting for Warmth...</h1>
+                   </div>
+                   <!-- Convert Button -->
+                    <button id="btn" class="w-full h-16 bg-black flex items-center justify-center rounded-lg group transition duration-200 hover:-translate-y-1 cursor-pointer gap-3 mb-1">
+                        <h1 class="text-slate-100 tracking-[4px] text-lg transition duration-200 group-hover:-translate-y-1">CONVERT</h1>
+                        <i class="ri-arrow-right-line text-slate-100 text-lg transition duration-300 group-hover:-translate-y-1"></i>
+                    </button>
+           </div>
+     </div>
+
+     <!-- Script -->
+      <script src="app.js"></script>
+</body>
+</html>
